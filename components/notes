@@ -1,0 +1,103 @@
+lesson 1-> making components
+
+//////part 1
+Installation of tailwind css (INDEPENDENT OF ANY FRAMEWORK)
+-the simplest way and fastest way to get up and running with tailwind CSS from scratch is with the tailwind CLI tool.
+
+step 1)create two folders
+1)src means source
+2)dist means distributables
+why we need dist?
+-how tailwind work is basically it will compile the configuration and whatever things u provide and then it will basically make sure the style ur using in the production only those style will go into the production build thats why we keep it seprate.
+this is famous feature of tailwind also known as tailwind perge.
+
+step2)
+terminal command->
+-npx tailwindcss init
+
+tailwind.config.js
+
+/** @type {import('tailwindcss').Config} \*/
+module.exports = {
+content: ["./src/**/\*.{html,js}"],
+theme: {
+extend: {},
+},
+plugins: [],
+}
+
+3)create file where u will manage all your css
+
+file name-
+-input.css
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+->Add the @tailwind directives for each of Tailwind’s layers to your main CSS file.
+
+step 4)Start the Tailwind CLI build process
+Run the CLI tool to scan your template files for classes and build your CSS.
+
+terminal->
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
+//cool extensions and imp too
+-(1) live server by ritwick Dey
+-(2) Tailwind CSS intesilence by tailwind labs coolestx10
+-(3) tailwind Docs - if u install this u can do command shift > and u can search in your vs code so u dont have to switch from browser to vs code
+but this one its not recommended by siddhant because vs code has some issues with it
+
+///// part 2 - intro to capstone
+
+-atomic design
+whenever u start a house u cannot build everything u start building by smallest unit same applys for ui in our case the smallest component is buttons this are the building blocks of the project.
+
+->learn about figma dev mode calculating padding width etc makes easy
+-> in real world too u will get colour paletss in figma with the color code this is given by designer
+
+Note -
+when u want to use some color but not available in tailwind so this is where taialwind config comes
+open th config file update the code
+example- we want to add color neutral-50:#f9f9f9
+
+extend: {
+colors: {
+"neutral-50":"#f9f9f9"
+}
+}
+-this is how u extend the design system in the tailwind thats why tailwind is the most customizable framework
+
+->how to know attribute is missing ?
+-you have to search on tailwind docs
+
+-in figma file suppose 0.5 rem 0.5rem is given .how will i get to know which class is to use for 0.5 rem ?
+->search 0.5rem on docs u will see we have py-2 class which add on top and bottm 0.5rem
+
+->offical way to use the tailwind is basically go to tailwind UI website
+-> free resources
+
+- wickedblocks.dev
+- preline UI
+- TailGrids
+- Flowbite
+- tailwind css debug screens -> which will help in designing layouts
+
+// lesson 2 -> Building UI components & Introduction to Capstone Project.
+
+topics -
+1.how to break down a complex project into smaller componentns
+2.how to apply tailwind
+3.how to do the theming
+4.how to build a UI library
+
+start with installing tailwind using CLI we already learned in the prev lesson
+shortcut - open terminal in cs code -> ctrl + ~
+
+//Layouts
+there are two types of layouts
+1.vertical layout
+2.Horizontal layout
+
+All of your web designs can be build by using some combination of this layouts
